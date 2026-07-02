@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  tiktok-bot:
+    build: .
+    volumes:
+      - ./output:/app/output
+      - ./queue_state.json:/app/queue_state.json
+    stdin_open: true
+    tty: true
