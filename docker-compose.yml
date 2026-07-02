@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  tiktok-bot:
+    build: .
+    container_name: tiktok_bot
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./output:/app/output
+      - ./instance:/app/instance
+    environment:
+      - FLASK_ENV=production
+      - SECRET_KEY=your-secret-key-change-this
+    restart: unless-stopped
